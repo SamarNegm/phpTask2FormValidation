@@ -24,12 +24,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container" style="width: 450px">
+<body >
+    <div class="container"  class="form-group" style="width: 500px ; border-radius: 30px; shadow: 2px">
+    <h1 style="text-align:center;">   Data</h1>
 
 
         <form method="post" class="row g-3 needs-validation" action="validationDemo.php">
-        <table>
+        <table >
                 <tr>
                     <td>
                         <label for="">First Name</label>
@@ -138,28 +139,7 @@
     
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label for="">Skills</label>
-                    </td>
-                    <td>
-                  
-    
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="s1" value="c++" id="c++">
-                            <label class="form-check-label" for="flexCheckDefault">
-                            C++
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="s2" value="java" id="java" checked > 
-                            <label class="form-check-label" for="flexCheckChecked">
-                            Java
-                            </label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+ 
                 <tr>
                     <td>
                         <label for="">UserName</label>
@@ -232,23 +212,45 @@
                 </tr>
                 <tr>
                     <td>
+                        <label for="">Skills</label>
+                    </td>
+                    <td>
+                  
+    
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="s1" value="c++" id="c++">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            C++
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="s2" value="java" id="java" checked > 
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Java
+                            </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
 
                     </td>
                     <td>
 
-                        <input type="submit" class="btn btn-info">
+                        <input type="submit" class="btn"  style="background-color: #CDB699;margin: 20px; ;color: #FFFFFF">
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
 
-                        <input type="reset" class="btn btn-danger">
+                        <input type="reset" class="btn" style="background-color: #BB6464 ;color: #FFFFFF">
                     </td>
                 </tr>
             </table>
         </form>
     </div>
-
+                  
 </body>
 </html>
