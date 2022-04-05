@@ -56,7 +56,7 @@
     <!-- <?php
         ($fname)?'edit.php':'validationDemo.php';
         ?> -->
-        <form method="post"  class="row g-3 needs-validation" action="validationDemo.php?id={<?php> $id ?>}">
+        <form method="post"  class="row g-3 needs-validation" action="validationDemo.php?id=<?php echo $id ?>">
         <table >
                 <tr>
                     <td>

@@ -1,5 +1,7 @@
 <?php
 
+
+
     $errors = [];
     $olddata= [];
     if (empty($_POST["fname"]) or $_POST["fname"]==""){
@@ -73,8 +75,22 @@
             }catch (Exception $e){
                 echo $e->getMessage();
             }
-        
-           
+        ///edit the file
+            if($_GET["id"])
+            {
+                $file = fopen("users.txt", "a+");
+                $olduser=file("users.txt")[$_GET["id"]];
+                echo $user;
+                $dir="users.txt";
+                $contents = file_get_contents($dir);
+                $contents = str_replace($olduser, $user, $contents);
+                file_put_contents($dir, $contents);
+                fclose($file);
+                echo "Recored Deleted";
+                header("Location:viewTable.php");
+                // header("Location:edit.php?id={$_GET["id"]}");
+                // exit;
+            }     
 
  header("Location:viewTable.php?id={$_GET["id"]}");
     }
