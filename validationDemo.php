@@ -76,5 +76,5 @@
         
            
 
- header("Location:viewTable.php");
+ header("Location:viewTable.php?id={$_GET["id"]}");
     }

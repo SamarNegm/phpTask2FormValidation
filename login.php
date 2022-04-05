@@ -6,6 +6,7 @@
         $username=null;
         $password=null;
         $department=null;
+        $id=null;
 
 //    var_dump($_GET);
     if (isset($_GET["errors"])){
@@ -17,6 +18,8 @@
 //        var_dump($olddata);  # object
     }
     if (isset($_GET["id"])){
+        $id=$_GET["id"];
+        echo $id;
         echo "editting";
         $user=file("users.txt")[$_GET["id"]];
         echo "user>>".$user ;
@@ -53,7 +56,7 @@
     <!-- <?php
         ($fname)?'edit.php':'validationDemo.php';
         ?> -->
-        <form method="post"  class="row g-3 needs-validation" action="validationDemo.php">
+        <form method="post"  class="row g-3 needs-validation" action="validationDemo.php?id={<?php> $id ?>}">
         <table >
                 <tr>
                     <td>
