@@ -27,7 +27,7 @@
            echo "<tr>";
            echo "<td>{$line[0]}</td> <td>{$line[1]}</td>
                 <td><a href='./viewuser.php?id={$index}'> View</a></td>
-                <td><a href='./edit.php?id={$index}'> Edit</a></td>
+                <td><a href='./login.php?id={$index}'> Edit</a></td>
                 <td><a href='./delete.php?id={$index}'> delete</a></td>
                 ";
                
