@@ -20,161 +20,235 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form method="post" action="validationDemo.php">
-    <table>
-            <tr>
-                <td>
-                    <label for="">First Name</label>
-                </td>
-                <td><input type="text" name="fname"  value="<?php if(isset($olddata->fname)) {echo $olddata->fname;} ?>"></td>
-                <td>
-                    <?php
-                        if(isset($errors->fname)){
-                            echo "<p style='color: red'> $errors->fname</p>";
-                        }
-                    ?>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="">Last Name</label>
-                </td>
-                <td><input type="text" name="lname" value="<?php if(isset($olddata->lname)) {echo $olddata->lname;} ?>"></td>
-                <td>
-                    <?php
-                        if(isset($errors->lname)){
-                            echo "<p style='color: red'> $errors->lname</p>";
-                        }
-                    ?>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="description">description</label>
-                </td>
-                <td>
-                    <textarea name="description" id="" cols="30" rows="10"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="">Gender</label>
-                </td>
-                <td>
-                    <label for="">Femail</label><input type="radio" value="female" name="gender"></input>
-                    <label for="">male</label><input type="radio" value="male" name="gender"></input>
-                </td>
-                <td>
-                    <?php
-                        if(isset($errors->gender)){
-                            echo "<p style='color: red'> $errors->gender</p>";
-                        }
-                    ?>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="Egypt">Country</label>
-                </td>
-                <td>
+    <div class="container" style="width: 450px">
 
 
-                    <select name="address" id="Egypt">
-                        <option value="Egypt">Egypt</option>
-                        <option value="Us">Us</option>
-                        <option value="UK">UK</option>
-                        <option value="Sudan">Sudan</option>
-                    </select>
-                </td>
+        <form method="post" class="row g-3 needs-validation" action="validationDemo.php">
+        <table>
+                <tr>
+                    <td>
+                        <label for="">First Name</label>
+                    </td>
+                    <td><input type="text" class="form-control" name="fname"  value="<?php if(isset($olddata->fname)) {echo $olddata->fname;} ?>"></td>
+                
+                </tr>
+                <tr>
+                    <td></td>
                 <td>
-                    <?php
-                        if(isset($errors->address)){
-                            echo "<p style='color: red'> $errors->address</p>";
-                        }
-                    ?>
+                        <?php
+                            if(isset($errors->fname)){
+                                echo "<p style='color: red'> $errors->fname</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Last Name</label>
+                    </td>
+                    <td><input class="form-control" type="text" name="lname" value="<?php if(isset($olddata->lname)) {echo $olddata->lname;} ?>"></td>
+                  
+                </tr>
+                <tr>
+                    <td></td>
+               
+                    <td>
+                        <?php
+                            if(isset($errors->lname)){
+                                echo "<p style='color: red'> $errors->lname</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="description">description</label>
+                    </td>
+                    <td>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Comments</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <label for="">Gender</label>
+                    </td>
+                    <td>
+                    <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="femail" id="flexRadioDefault1">
+                            <label class="form-check-label" for="gender">
+                            Femail
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="gender">
+                            Male
+                            </label>
+                            </div>
+                    </td>
 
-                </td>
-            </tr>
-            <tr>
+                </tr>
+                <tr>
+                    <td></td>
+                    
                 <td>
-                    <label for="">Skills</label>
-                </td>
+                        <?php
+                            if(isset($errors->gender)){
+                                echo "<p style='color: red'> $errors->gender</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Egypt">Country</label>
+                    </td>
+                    <td>
+    
+    
+                        <select  class="form-select" name="address" id="Egypt">
+                            <option value="Egypt">Egypt</option>
+                            <option value="Us">Us</option>
+                            <option value="UK">UK</option>
+                            <option value="Sudan">Sudan</option>
+                        </select>
+                    </td>
+               
+                </tr>
+                <tr>
+                    <td></td>
                 <td>
-                    <label for="c++">C++</label> <input type="checkbox" name="s1" value="c++" id="c++">
-                    <label for="java">Java</label> <input type="checkbox" name="s2" value="java" id="java">
-                    <br>
-                    <label for="python">Python</label> <input type="checkbox" name="s3" value="python" id="python">
-                    <label for="mysql">MySQL</label> <input type="checkbox" name="s4" value="mysql" id="mysql">
+                        <?php
+                            if(isset($errors->address)){
+                                echo "<p style='color: red'> $errors->address</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Skills</label>
+                    </td>
+                    <td>
+                  
+    
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="s1" value="c++" id="c++">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            C++
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="s2" value="java" id="java" checked > 
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Java
+                            </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">UserName</label>
+                    </td>
+                    <td><input class="form-control" type="text" name="username"  value="<?php if(isset($olddata->username)) {echo $olddata->username;} ?>"></td>
+                
+                </tr>
+                <tr>
+                    <td></td>
+                <td>
+                        <?php
+                            if(isset($errors->username)){
+                                echo "<p style='color: red'> $errors->username</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td><input type="text" class="form-control" name="password"  value="<?php if(isset($olddata->password)) {echo $olddata->password;} ?>"></td>
+            
+                </tr>
+                <tr>
+                    <td></td>
+                <td>
+                        <?php
+                            if(isset($errors->password)){
+                                echo "<p style='color: red'> $errors->password</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Department">Department</label>
+                    </td>
+                    <td><input class="form-control" type="text" name="Department" value="<?php if(isset($olddata->Department)) {echo $olddata->Department;} ?>"></td>
+               
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <?php
+                            if(isset($errors->Department)){
+                                echo "<p style='color: red'> $errors->Department</p>";
+                            }
+                        ?>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <label for="">12344</label>
+                    </td>
+    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="text" class="form-control">
+                        <label for="">
+                            Please enter the text
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="">UserName</label>
-                </td>
-                <td><input type="text" name="username"  value="<?php if(isset($olddata->username)) {echo $olddata->username;} ?>"></td>
-                <td>
-                    <?php
-                        if(isset($errors->username)){
-                            echo "<p style='color: red'> $errors->username</p>";
-                        }
-                    ?>
+                    </td>
+                    <td>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="password">Password</label>
-                </td>
-                <td><input type="text" name="password"  value="<?php if(isset($olddata->password)) {echo $olddata->password;} ?>"></td>
-                <td>
-                    <?php
-                        if(isset($errors->password)){
-                            echo "<p style='color: red'> $errors->password</p>";
-                        }
-                    ?>
+                        <input type="submit" class="btn btn-info">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="Department">Department</label>
-                </td>
-                <td><input type="text" name="Department" value="<?php if(isset($olddata->Department)) {echo $olddata->Department;} ?>"></td>
-                <td>
-                    <?php
-                        if(isset($errors->Department)){
-                            echo "<p style='color: red'> $errors->Department</p>";
-                        }
-                    ?>
-
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <label for="">12344</label>
-                </td>
-
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="text">
-                    <label for="">
-                        Please enter the text
-                    </label>
-                </td>
-            </tr>
-        </table>
-        <input type="submit">
-        <input type="reset">
-    </form>
+                        <input type="reset" class="btn btn-danger">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 
 </body>
 </html>
